@@ -1,0 +1,20 @@
+{
+  "name": "gitbook-plugin-zingchart",
+  "version": "2.0.1",
+  "description": "ZingChart plugin for Gitbook",
+  "main": "index.js",
+  "engines": {
+    "gitbook": ">=2.x.x"
+  },
+  "keywords": [
+    "gitbook",
+    "zingchart"
+  ],
+  "author": "ZingChart",
+  "license": "MIT",
+  "homepage": "https://github.com/zingchart/gitbook-plugin-zingchart",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zingchart/gitbook-plugin-zingchart.git"
+  }
+}
