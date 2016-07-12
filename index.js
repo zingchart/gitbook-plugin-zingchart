@@ -1,8 +1,20 @@
+var fs = require('fs');
+var Q = require('q');
+var path = require('path');
+
 var _counter = 1;
+var _currentPage;
 
 module.exports = {
     website: {
         assets: "./assets"
+    },
+
+    hooks: {
+        "page:before": function(page) {
+            _currentPage = page;
+            return page;
+        }
     },
 
     blocks: {
@@ -12,17 +24,20 @@ module.exports = {
                     var id = 'zingchart-' + _counter++;
                     var div = '<div id="' + id + '"></div>';
                     var args = block.kwargs;
-                    var width = '';
-                    var height = '';
-                    if (args && args.width) {
-                        width = ', width:' + args.width;
+
+                    var obj = {id: id};
+                    if (block.body.trim() !== '') {
+                        obj.data = block.body;
                     }
 
-                    if (args && args.height) {
-                        height = ', height:' + args.height;
+                    for (var key in args) {
+                        if (args.hasOwnProperty(key)) {
+                            var name = (key === 'src') ? 'dataurl' : key;
+                            obj[name] = args[key];
+                        }
                     }
 
-                    var script = "<script>zingchart.render({ id: '" + id + "', data: " + JSON.stringify(block.body) + width + height + "});</script>";
+                    var script = "<script>zingchart.render(" + JSON.stringify(obj) + ");</script>";
                     return div + script;
                 }
                 else{

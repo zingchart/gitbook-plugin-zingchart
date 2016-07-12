@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-zingchart",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "ZingChart plugin for Gitbook",
   "main": "index.js",
   "engines": {
@@ -16,5 +16,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zingchart/gitbook-plugin-zingchart.git"
+  },
+  "dependencies": {
+    "q": "^1.4.1"
   }
 }
