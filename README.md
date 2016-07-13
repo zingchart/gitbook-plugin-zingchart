@@ -34,7 +34,7 @@ $ npm install gitbook-plugin-zingchart --save
 ```
 {% zingchart dataurl='./zingchart.json', width=700, height=200 %}{% endzingchart %}
 ```
-![External JSON]('/assets/images/external.png')
+![External JSON](/assets/images/external.png)
 
 ```
 {% zingchart width=700, height=200 %}
@@ -47,5 +47,5 @@ $ npm install gitbook-plugin-zingchart --save
 }
 {% endzingchart %}
 ```
-![Embedded JSON]('/assets/images/embedded.png')
+![Embedded JSON](/assets/images/embedded.png)
 
